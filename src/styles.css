@@ -7,7 +7,7 @@
   --bg-card: #181830;
   --text: #e4e3dc;
   --text-dim: #86869a;
-  --accent: #00e5a0;
+  --accent: #1FD5F9;
   --accent-soft: rgba(0, 229, 160, 0.12);
   --border: rgba(255, 255, 255, 0.06);
   --font-display: 'Syne', system-ui, sans-serif;
@@ -78,15 +78,16 @@ a {
 
 /* ── Hero ──────────────────────────────────────────────── */
 .hero {
-  min-height: 88vh;
+  min-height: auto;
   display: flex;
-  align-items: flex-end;
-  padding: 2rem 2rem 7rem;
+  align-items: flex-start;
+  padding: 50px 2rem 5rem;
 }
 
 .hero-inner {
-  max-width: 780px;
-  margin-left: 7%;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .hero-label {

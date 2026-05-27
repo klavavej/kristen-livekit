@@ -13,34 +13,25 @@ const APPLICANT = {
 
 const WRITING_SAMPLES = [
   {
-    title: 'Voice AI is Eating the IVR',
-    subtitle: 'What Developers Need to Know',
+    title: 'Responses overview',
+    subtitle: 'Great Expectations,
     description:
-      'An analysis of how voice AI agents are replacing legacy interactive voice response systems, and what this shift means for developers building customer-facing applications.',
-    outlet: 'Dev.to',
-    date: 'Jan 2026',
-    url: '#',
-    tags: ['Voice AI', 'Developer Experience'],
+      'Conceptual content Kristen wrote for a feature release to help users understand why and when to use 3 different related features.',
+    url: 'https://docs.greatexpectations.io/docs/cloud/alerts/responses_overview',
   },
   {
-    title: 'Building Real-Time Apps at Scale',
-    subtitle: "A Developer's Guide to WebRTC Infrastructure",
+    title: 'Production launch checklist',
+    subtitle: "Netlify",
     description:
-      'A comprehensive technical guide walking developers through the architecture decisions behind scalable WebRTC deployments, from SFU selection to global edge routing.',
-    outlet: 'Smashing Magazine',
-    date: 'Nov 2025',
-    url: '#',
-    tags: ['WebRTC', 'Infrastructure'],
+      'Actionable best practices Kristen wrote to boost feature discoverability and adoption',
+    url: 'https://docs.netlify.com/resources/checklists/production-checklist/',
   },
   {
-    title: 'The Open-Source Playbook',
-    subtitle: 'How Dev Tools Companies Win Hearts and Commits',
+    title: 'GX in your data pipeline',
+    subtitle: 'Great Expectations',
     description:
-      'A strategic deep-dive into how open-source-first companies build developer loyalty, examining community engagement models that convert users into contributors.',
-    outlet: 'First Round Review',
-    date: 'Sep 2025',
+      'Diagrams created by Kristen on 3 child pages to support content written by Product and Developer Relations',
     url: '#',
-    tags: ['Open Source', 'Community'],
   },
 ]
 
@@ -113,10 +104,6 @@ function ApplicationPage() {
                   {String(i + 1).padStart(2, '0')}
                 </div>
                 <div className="sample-body">
-                  <div className="sample-meta">
-                    <span className="sample-outlet">{sample.outlet}</span>
-                    <span className="sample-date">{sample.date}</span>
-                  </div>
                   <h3 className="sample-title">
                     {sample.title}
                     <span className="sample-subtitle">
@@ -125,13 +112,6 @@ function ApplicationPage() {
                     </span>
                   </h3>
                   <p className="sample-desc">{sample.description}</p>
-                  <div className="sample-tags">
-                    {sample.tags.map((tag) => (
-                      <span key={tag} className="sample-tag">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
                 </div>
                 <div className="sample-arrow" aria-hidden="true">
                   <svg
