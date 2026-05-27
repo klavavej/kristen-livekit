@@ -427,7 +427,7 @@ a {
 @media (max-width: 640px) {
   .hero {
     min-height: 75vh;
-    padding: 2rem 1.5rem 4rem;
+    padding: 2rem 1.5rem 2rem;
   }
 
   .hero-inner {
