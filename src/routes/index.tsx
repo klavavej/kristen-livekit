@@ -14,7 +14,7 @@ const APPLICANT = {
 const WRITING_SAMPLES = [
   {
     title: 'Responses overview',
-    subtitle: 'Great Expectations,
+    subtitle: 'Great Expectations',
     description:
       'Conceptual content Kristen wrote for a feature release to help users understand why and when to use 3 different related features.',
     url: 'https://docs.greatexpectations.io/docs/cloud/alerts/responses_overview',
