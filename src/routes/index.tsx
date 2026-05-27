@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { useEffect } from 'react'
 
 
-const LIVEKIT_AGENT_ID = import.meta.env.VITE_LIVEKIT_KEY;
+const LIVEKIT_AGENT_ID = "CA_bSwvvRBc7Udo";
 
 const APPLICANT = {
   name: 'Kristen Lavavej',
@@ -31,7 +31,7 @@ const WRITING_SAMPLES = [
     subtitle: 'Great Expectations',
     description:
       'Diagrams created by Kristen on 3 child pages to support content written by Product and Developer Relations',
-    url: '#',
+    url: 'https://docs.greatexpectations.io/docs/reference/learn/gx_in_your_data_pipeline/gx_in_your_data_pipeline_lp',
   },
 ]
 
@@ -43,17 +43,20 @@ export const Route = createFileRoute('/')({
 
 function ApplicationPage() {
   useEffect(() => {
-    if (!LIVEKIT_AGENT_ID) return
-    const script = document.createElement('script')
-    script.src = 'https://cloud.livekit.io/embed-popup.js'
-    script.setAttribute('data-lk-agent', LIVEKIT_AGENT_ID)
-    document.body.appendChild(script)
+    const script = document.createElement('script');
+
+    script.src = 'https://cloud.livekit.io/embed-popup.js';
+    script.async = true;
+
+    script.setAttribute('data-lk-agent', 'CA_bSwvvRBc7Udo');
+    script.setAttribute('data-lk-color', '#002CF2');
+
+    document.body.appendChild(script);
+
     return () => {
-      if (script.parentNode) {
-        script.parentNode.removeChild(script)
-      }
-    }
-  }, [])
+      script.remove();
+    };
+  }, []);
 
   return (
     <div className="app">
