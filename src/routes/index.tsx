@@ -6,7 +6,6 @@ const LIVEKIT_AGENT_ID = "CA_bSwvvRBc7Udo";
 
 const APPLICANT = {
   name: 'Kristen Lavavej',
-  linkedIn: 'https://www.linkedin.com/in/kristen-lavavej-7a403117/',
   pitch:
     "Multi-faceted technical communicator transitioning from documentation to marketing.",
 }
@@ -72,19 +71,27 @@ function ApplicationPage() {
             <span className="accent">@ LiveKit</span>
           </h2>
           <p className="hero-pitch fade-up delay-3">{APPLICANT.pitch}</p>
-          <div className="hero-links fade-up delay-4">
-            <a
-              href={APPLICANT.linkedIn}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hero-link"
-            >
-              LinkedIn
-            </a>
-
-          </div>
         </div>
       </header>
+
+      {/* ── LiveKit Voice Widget ─────────────────────── */}
+      <section className="voice-section">
+        <div className="section-inner">
+          <h2 className="section-heading">
+            <span className="section-label">Interactive</span>
+            Chat about Kristen
+          </h2>
+
+          <div className="voice-body">
+            {LIVEKIT_AGENT_ID ? (
+              <p className="voice-text">
+                Click the LiveKit widget in the corner and ask some questions about why you should hire Kristen.
+              </p>
+            )}
+          </div>
+        </div>
+      </section>
+
 
       {/* ── Writing Samples ──────────────────────────── */}
       <section className="samples">
@@ -137,62 +144,6 @@ function ApplicationPage() {
         </div>
       </section>
 
-      {/* ── LiveKit Voice Widget ─────────────────────── */}
-      <section className="voice-section">
-        <div className="section-inner">
-          <h2 className="section-heading">
-            <span className="section-label">Interactive</span>
-            LiveKit Voice Agent
-          </h2>
-
-          <div className="voice-body">
-            {LIVEKIT_AGENT_ID ? (
-              <p className="voice-text">
-                Click the voice widget in the corner to experience LiveKit's
-                real-time voice technology firsthand. This agent is powered by
-                LiveKit's infrastructure &mdash; the same platform I'd be
-                writing about every day.
-              </p>
-            ) : (
-              <div className="voice-setup">
-                <p className="voice-text">
-                  This section features a live LiveKit voice agent widget. To
-                  activate it, add your LiveKit Cloud agent ID to the
-                  configuration at the top of{' '}
-                  <code>src/routes/index.tsx</code>.
-                </p>
-                <div className="voice-steps">
-                  <div className="voice-step">
-                    <span className="voice-step-n">1</span>
-                    <span>
-                      Create a free account at{' '}
-                      <a
-                        href="https://cloud.livekit.io"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        cloud.livekit.io
-                      </a>
-                    </span>
-                  </div>
-                  <div className="voice-step">
-                    <span className="voice-step-n">2</span>
-                    <span>Set up a Sandbox voice agent</span>
-                  </div>
-                  <div className="voice-step">
-                    <span className="voice-step-n">3</span>
-                    <span>
-                      Copy your agent ID (e.g.{' '}
-                      <code>CA_abc123</code>) and paste it into{' '}
-                      <code>LIVEKIT_AGENT_ID</code>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
 
 
     </div>
