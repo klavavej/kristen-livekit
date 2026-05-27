@@ -1,22 +1,14 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { useEffect } from 'react'
 
-// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-//  CUSTOMIZE THIS SECTION
-//  Replace placeholder values with your real information.
-//  For the LiveKit widget, sign up at cloud.livekit.io,
-//  create a Sandbox agent, and paste the agent ID below.
-// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 const LIVEKIT_AGENT_ID = import.meta.env.VITE_LIVEKIT_KEY;
 
 const APPLICANT = {
-  name: 'Your Name',
-  email: 'you@example.com',
-  linkedIn: 'https://linkedin.com/in/your-profile',
-  twitter: 'https://twitter.com/yourhandle',
+  name: 'Kristen Lavavej',
+  linkedIn: 'https://www.linkedin.com/in/kristen-lavavej-7a403117/',
   pitch:
-    "I craft developer-focused narratives that drive adoption, build community, and make complex real-time technology accessible. With a background spanning technical writing, developer relations, and content strategy, I'm ready to tell LiveKit's story to the builders who need it most.",
+    "Multi-faceted technical communicator transitioning from documentation to marketing.",
 }
 
 const WRITING_SAMPLES = [
@@ -49,16 +41,6 @@ const WRITING_SAMPLES = [
     date: 'Sep 2025',
     url: '#',
     tags: ['Open Source', 'Community'],
-  },
-  {
-    title: 'From Text to Talk',
-    subtitle: 'Why Voice-First Interfaces Are the Future of AI',
-    description:
-      'Exploring the convergence of large language models and real-time audio streaming, and why the next generation of AI applications will be heard, not read.',
-    outlet: 'Medium',
-    date: 'Jul 2025',
-    url: '#',
-    tags: ['AI', 'Voice Interfaces'],
   },
 ]
 
@@ -97,10 +79,6 @@ function ApplicationPage() {
           </h2>
           <p className="hero-pitch fade-up delay-3">{APPLICANT.pitch}</p>
           <div className="hero-links fade-up delay-4">
-            <a href={`mailto:${APPLICANT.email}`} className="hero-link">
-              {APPLICANT.email}
-            </a>
-            <span className="hero-sep">/</span>
             <a
               href={APPLICANT.linkedIn}
               target="_blank"
@@ -109,15 +87,7 @@ function ApplicationPage() {
             >
               LinkedIn
             </a>
-            <span className="hero-sep">/</span>
-            <a
-              href={APPLICANT.twitter}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hero-link"
-            >
-              Twitter
-            </a>
+
           </div>
         </div>
       </header>
@@ -241,25 +211,7 @@ function ApplicationPage() {
         </div>
       </section>
 
-      {/* ── Footer ───────────────────────────────────── */}
-      <footer className="site-footer">
-        <div className="section-inner footer-inner">
-          <p className="footer-text">
-            Built to demonstrate product fluency with LiveKit's real-time
-            platform.
-          </p>
-          <p className="footer-text">
-            Powered by{' '}
-            <a
-              href="https://livekit.io"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LiveKit
-            </a>
-          </p>
-        </div>
-      </footer>
+
     </div>
   )
 }
