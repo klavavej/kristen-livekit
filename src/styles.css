@@ -81,7 +81,7 @@ a {
   min-height: auto;
   display: flex;
   align-items: flex-start;
-  padding: 50px 2rem 5rem;
+  padding: 50px 2rem 3rem;
 }
 
 .hero-inner {
@@ -427,7 +427,7 @@ a {
 @media (max-width: 640px) {
   .hero {
     min-height: 75vh;
-    padding: 2rem 1.5rem 2rem;
+    padding: 2rem 1.5rem 4rem;
   }
 
   .hero-inner {
