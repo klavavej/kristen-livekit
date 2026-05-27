@@ -1,64 +1,36 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { useEffect } from 'react'
 
-// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-//  CUSTOMIZE THIS SECTION
-//  Replace placeholder values with your real information.
-//  For the LiveKit widget, sign up at cloud.livekit.io,
-//  create a Sandbox agent, and paste the agent ID below.
-// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-const LIVEKIT_AGENT_ID = '' // e.g. "CA_abc123"
+const LIVEKIT_AGENT_ID = "CA_bSwvvRBc7Udo";
 
 const APPLICANT = {
-  name: 'Your Name',
-  email: 'you@example.com',
-  linkedIn: 'https://linkedin.com/in/your-profile',
-  twitter: 'https://twitter.com/yourhandle',
+  name: 'Kristen Lavavej',
   pitch:
-    "I craft developer-focused narratives that drive adoption, build community, and make complex real-time technology accessible. With a background spanning technical writing, developer relations, and content strategy, I'm ready to tell LiveKit's story to the builders who need it most.",
+    "Multi-faceted technical communicator transitioning from documentation to marketing.",
 }
 
 const WRITING_SAMPLES = [
   {
-    title: 'Voice AI is Eating the IVR',
-    subtitle: 'What Developers Need to Know',
+    title: 'Responses overview',
+    subtitle: 'Great Expectations',
     description:
-      'An analysis of how voice AI agents are replacing legacy interactive voice response systems, and what this shift means for developers building customer-facing applications.',
-    outlet: 'Dev.to',
-    date: 'Jan 2026',
-    url: '#',
-    tags: ['Voice AI', 'Developer Experience'],
+      'Conceptual content Kristen wrote for a feature release to help users understand why and when to use 3 different related features.',
+    url: 'https://docs.greatexpectations.io/docs/cloud/alerts/responses_overview',
   },
   {
-    title: 'Building Real-Time Apps at Scale',
-    subtitle: "A Developer's Guide to WebRTC Infrastructure",
+    title: 'Production launch checklist',
+    subtitle: "Netlify",
     description:
-      'A comprehensive technical guide walking developers through the architecture decisions behind scalable WebRTC deployments, from SFU selection to global edge routing.',
-    outlet: 'Smashing Magazine',
-    date: 'Nov 2025',
-    url: '#',
-    tags: ['WebRTC', 'Infrastructure'],
+      'Actionable best practices Kristen wrote to boost feature discoverability and adoption',
+    url: 'https://docs.netlify.com/resources/checklists/production-checklist/',
   },
   {
-    title: 'The Open-Source Playbook',
-    subtitle: 'How Dev Tools Companies Win Hearts and Commits',
+    title: 'GX in your data pipeline',
+    subtitle: 'Great Expectations',
     description:
-      'A strategic deep-dive into how open-source-first companies build developer loyalty, examining community engagement models that convert users into contributors.',
-    outlet: 'First Round Review',
-    date: 'Sep 2025',
-    url: '#',
-    tags: ['Open Source', 'Community'],
-  },
-  {
-    title: 'From Text to Talk',
-    subtitle: 'Why Voice-First Interfaces Are the Future of AI',
-    description:
-      'Exploring the convergence of large language models and real-time audio streaming, and why the next generation of AI applications will be heard, not read.',
-    outlet: 'Medium',
-    date: 'Jul 2025',
-    url: '#',
-    tags: ['AI', 'Voice Interfaces'],
+      'Diagrams created by Kristen on 3 child pages to support content written by Product and Developer Relations',
+    url: 'https://docs.greatexpectations.io/docs/reference/learn/gx_in_your_data_pipeline/gx_in_your_data_pipeline_lp',
   },
 ]
 
@@ -70,17 +42,20 @@ export const Route = createFileRoute('/')({
 
 function ApplicationPage() {
   useEffect(() => {
-    if (!LIVEKIT_AGENT_ID) return
-    const script = document.createElement('script')
-    script.src = 'https://cloud.livekit.io/embed-popup.js'
-    script.setAttribute('data-lk-agent', LIVEKIT_AGENT_ID)
-    document.body.appendChild(script)
+    const script = document.createElement('script');
+
+    script.src = 'https://cloud.livekit.io/embed-popup.js';
+    script.async = true;
+
+    script.setAttribute('data-lk-agent', 'CA_bSwvvRBc7Udo');
+    script.setAttribute('data-lk-color', '#002CF2');
+
+    document.body.appendChild(script);
+
     return () => {
-      if (script.parentNode) {
-        script.parentNode.removeChild(script)
-      }
-    }
-  }, [])
+      script.remove();
+    };
+  }, []);
 
   return (
     <div className="app">
@@ -96,31 +71,31 @@ function ApplicationPage() {
             <span className="accent">@ LiveKit</span>
           </h2>
           <p className="hero-pitch fade-up delay-3">{APPLICANT.pitch}</p>
-          <div className="hero-links fade-up delay-4">
-            <a href={`mailto:${APPLICANT.email}`} className="hero-link">
-              {APPLICANT.email}
-            </a>
-            <span className="hero-sep">/</span>
-            <a
-              href={APPLICANT.linkedIn}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hero-link"
-            >
-              LinkedIn
-            </a>
-            <span className="hero-sep">/</span>
-            <a
-              href={APPLICANT.twitter}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hero-link"
-            >
-              Twitter
-            </a>
-          </div>
         </div>
       </header>
+
+      {/* ── LiveKit Voice Widget ─────────────────────── */}
+      <section className="voice-section">
+        <div className="section-inner">
+          <h2 className="section-heading">
+            <span className="section-label">Interactive</span>
+            Chat about Kristen
+          </h2>
+
+          <div className="voice-body">
+            {LIVEKIT_AGENT_ID ? (
+              <p className="voice-text">
+                Click the LiveKit widget in the corner and ask some questions about why you should hire Kristen.
+              </p>
+            ) : (
+              <p className="voice-text">
+                Something went wrong with the LiveKit integration. That's what Kristen gets for vibe-coding this in an afternoon. Please let her know the widget failed so she can learn from this mistake.
+              </p>
+            )}
+          </div>
+        </div>
+      </section>
+
 
       {/* ── Writing Samples ──────────────────────────── */}
       <section className="samples">
@@ -143,10 +118,6 @@ function ApplicationPage() {
                   {String(i + 1).padStart(2, '0')}
                 </div>
                 <div className="sample-body">
-                  <div className="sample-meta">
-                    <span className="sample-outlet">{sample.outlet}</span>
-                    <span className="sample-date">{sample.date}</span>
-                  </div>
                   <h3 className="sample-title">
                     {sample.title}
                     <span className="sample-subtitle">
@@ -155,13 +126,6 @@ function ApplicationPage() {
                     </span>
                   </h3>
                   <p className="sample-desc">{sample.description}</p>
-                  <div className="sample-tags">
-                    {sample.tags.map((tag) => (
-                      <span key={tag} className="sample-tag">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
                 </div>
                 <div className="sample-arrow" aria-hidden="true">
                   <svg
@@ -184,82 +148,9 @@ function ApplicationPage() {
         </div>
       </section>
 
-      {/* ── LiveKit Voice Widget ─────────────────────── */}
-      <section className="voice-section">
-        <div className="section-inner">
-          <h2 className="section-heading">
-            <span className="section-label">Interactive</span>
-            LiveKit Voice Agent
-          </h2>
 
-          <div className="voice-body">
-            {LIVEKIT_AGENT_ID ? (
-              <p className="voice-text">
-                Click the voice widget in the corner to experience LiveKit's
-                real-time voice technology firsthand. This agent is powered by
-                LiveKit's infrastructure &mdash; the same platform I'd be
-                writing about every day.
-              </p>
-            ) : (
-              <div className="voice-setup">
-                <p className="voice-text">
-                  This section features a live LiveKit voice agent widget. To
-                  activate it, add your LiveKit Cloud agent ID to the
-                  configuration at the top of{' '}
-                  <code>src/routes/index.tsx</code>.
-                </p>
-                <div className="voice-steps">
-                  <div className="voice-step">
-                    <span className="voice-step-n">1</span>
-                    <span>
-                      Create a free account at{' '}
-                      <a
-                        href="https://cloud.livekit.io"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        cloud.livekit.io
-                      </a>
-                    </span>
-                  </div>
-                  <div className="voice-step">
-                    <span className="voice-step-n">2</span>
-                    <span>Set up a Sandbox voice agent</span>
-                  </div>
-                  <div className="voice-step">
-                    <span className="voice-step-n">3</span>
-                    <span>
-                      Copy your agent ID (e.g.{' '}
-                      <code>CA_abc123</code>) and paste it into{' '}
-                      <code>LIVEKIT_AGENT_ID</code>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
 
-      {/* ── Footer ───────────────────────────────────── */}
-      <footer className="site-footer">
-        <div className="section-inner footer-inner">
-          <p className="footer-text">
-            Built to demonstrate product fluency with LiveKit's real-time
-            platform.
-          </p>
-          <p className="footer-text">
-            Powered by{' '}
-            <a
-              href="https://livekit.io"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LiveKit
-            </a>
-          </p>
-        </div>
-      </footer>
     </div>
   )
 }
+

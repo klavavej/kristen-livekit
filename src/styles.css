@@ -7,7 +7,7 @@
   --bg-card: #181830;
   --text: #e4e3dc;
   --text-dim: #86869a;
-  --accent: #00e5a0;
+  --accent: #1FD5F9;
   --accent-soft: rgba(0, 229, 160, 0.12);
   --border: rgba(255, 255, 255, 0.06);
   --font-display: 'Syne', system-ui, sans-serif;
@@ -78,15 +78,16 @@ a {
 
 /* ── Hero ──────────────────────────────────────────────── */
 .hero {
-  min-height: 88vh;
+  min-height: auto;
   display: flex;
-  align-items: flex-end;
-  padding: 2rem 2rem 7rem;
+  align-items: flex-start;
+  padding: 50px 2rem 3rem;
 }
 
 .hero-inner {
-  max-width: 780px;
-  margin-left: 7%;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .hero-label {
@@ -102,7 +103,7 @@ a {
 .hero-name {
   font-family: var(--font-display);
   font-size: clamp(2.8rem, 8vw, 5.5rem);
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.02;
   margin: 0 0 0.6rem;
   letter-spacing: -0.02em;
@@ -125,7 +126,7 @@ a {
   font-size: 1.05rem;
   line-height: 1.8;
   color: var(--text-dim);
-  max-width: 580px;
+  max-width: 1000px;
   margin: 0 0 2.25rem;
 }
 
@@ -186,7 +187,7 @@ a {
 
 /* ── Writing Samples ───────────────────────────────────── */
 .samples {
-  padding: 5.5rem 0;
+  padding: 3.5rem 0;
   border-top: 1px solid var(--border);
 }
 
@@ -309,12 +310,12 @@ a {
 
 /* ── Voice Section ─────────────────────────────────────── */
 .voice-section {
-  padding: 5.5rem 0;
+  padding: 3.5rem 0;
   border-top: 1px solid var(--border);
 }
 
 .voice-body {
-  max-width: 600px;
+  max-width: 1000px;
 }
 
 .voice-text {
