@@ -87,6 +87,10 @@ function ApplicationPage() {
               <p className="voice-text">
                 Click the LiveKit widget in the corner and ask some questions about why you should hire Kristen.
               </p>
+            ) : (
+              <p className="voice-text">
+                Something went wrong with the LiveKit integration. That's what Kristen gets for vibe-coding this in an afternoon. Please let her know the widget failed so she can learn from this mistake.
+              </p>
             )}
           </div>
         </div>
