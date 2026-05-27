@@ -22,14 +22,14 @@ const WRITING_SAMPLES = [
     title: 'Production launch checklist',
     subtitle: "Netlify",
     description:
-      'Actionable best practices Kristen wrote to boost feature discoverability and adoption',
+      'Actionable best practices Kristen wrote to boost feature discoverability and adoption.',
     url: 'https://docs.netlify.com/resources/checklists/production-checklist/',
   },
   {
     title: 'GX in your data pipeline',
     subtitle: 'Great Expectations',
     description:
-      'Diagrams created by Kristen on 3 child pages to support content written by Product and Developer Relations',
+      'Diagrams created by Kristen on 3 child pages to support content written by Product and Developer Relations.',
     url: 'https://docs.greatexpectations.io/docs/reference/learn/gx_in_your_data_pipeline/gx_in_your_data_pipeline_lp',
   },
 ]
