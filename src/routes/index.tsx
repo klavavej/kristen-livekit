@@ -8,7 +8,7 @@ import { useEffect } from 'react'
 //  create a Sandbox agent, and paste the agent ID below.
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-const LIVEKIT_AGENT_ID = '' // e.g. "CA_abc123"
+const LIVEKIT_AGENT_ID = import.meta.env.VITE_LIVEKIT_KEY;
 
 const APPLICANT = {
   name: 'Your Name',
@@ -263,3 +263,4 @@ function ApplicationPage() {
     </div>
   )
 }
+
